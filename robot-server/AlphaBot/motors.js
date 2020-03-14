@@ -35,6 +35,7 @@ module.exports.forward = (speed) =>{
 
 module.exports.backward = (speed) =>{
     console.log('Moving backward');
+    current_speed = speed;
     updateSpeed()
     in1.digitalWrite(0);
     in2.digitalWrite(1);
@@ -44,6 +45,7 @@ module.exports.backward = (speed) =>{
 
 module.exports.left = (speed) =>{
     console.log('Moving left');
+    current_speed = speed;
     updateSpeed()
     in1.digitalWrite(0);
     in2.digitalWrite(1);
@@ -53,6 +55,7 @@ module.exports.left = (speed) =>{
 
 module.exports.right = (speed) =>{
     console.log('Moving right');
+    current_speed = speed;
     updateSpeed()
     in1.digitalWrite(1);
     in2.digitalWrite(0);

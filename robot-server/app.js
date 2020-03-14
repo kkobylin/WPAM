@@ -1,19 +1,23 @@
-const Motors = require('./motors.js');
-const ObstacleAvoidance = require('./obstacleAvoidance');
-const Encoders = require('./encoders');
-const CameraMotors = require('./cameraMotors');
+const Motors = require('./AlphaBot/motors.js');
+const ObstacleAvoidance = require('./AlphaBot/obstacleAvoidance');
+const Encoders = require('./AlphaBot/encoders');
+const CameraMotors = require('./AlphaBot/cameraMotors');
 
-CameraMotors.upDownAngle(1);
-CameraMotors.leftRightAngle(1);
+CameraMotors.calibration();
 
-setTimeout(() => CameraMotors.leftRightAngle(-20), 2000)
-setTimeout(() => CameraMotors.upDownAngle(20), 2000)
+setTimeout(() => {
 
-setTimeout(() => CameraMotors.leftRightAngle(1), 10000)
-setTimeout(() => CameraMotors.upDownAngle(1), 10000)
+    CameraMotors.upDownAngle(45);
+    CameraMotors.leftRightAngle(45);
+}, 2000)
+// //
+setTimeout(() => {
+    CameraMotors.upDownAngle(0);
+    CameraMotors.leftRightAngle(0)
+}, 4000)
 
 
-// Motors.forward(200);
-// // setTimeout(()=>Motors.forward(100), 2000);
-// // setTimeout(()=>Motors.forward(200),4000) ;
-// setTimeout(Motors.stop, 4000);
+Motors.backward(200);
+// setTimeout(()=>Motors.forward(100), 2000);
+// setTimeout(()=>Motors.forward(200),4000) ;
+setTimeout(Motors.stop, 3000);
