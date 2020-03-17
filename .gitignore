@@ -1,0 +1,14 @@
+*.iml
+.gradle
+.externalNativeBuild
+.cxx
+.DS_Store
+.properties
+
+#Ignore everything from mobile_app
+mobile_app/*
+
+#Except for
+
+!mobile_app/app/src
+
