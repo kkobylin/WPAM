@@ -5,8 +5,10 @@
 .DS_Store
 .properties
 
-#Ignore everything from mobile_app
+#Ignore everything from mobile_app, temp_server
 mobile_app/*
+temp_server
+.idea
 
 #Except for
 
