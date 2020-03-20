@@ -6,11 +6,9 @@
 .properties
 
 #Ignore everything from mobile_app, temp_server
-mobile_app/*
 temp_server
 .idea
 
 #Except for
 
-!mobile_app/app/src
 
