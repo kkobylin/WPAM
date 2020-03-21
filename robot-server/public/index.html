@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Learn jQuery UI" />
+	<meta name="keywords" content="HTML,CSS,jQuery UI" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="/styles/style.css" />
+	<link rel="stylesheet" href="/styles/jquery-ui.css" />
+
+	<script src="/js/jquery/jquery.js"></script>
+	<script src="/js/jquery/jquery-ui.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/index.js"></script>
+	<script>
+		$(function() {
+			$(".button").button({
+				icons: {
+					primary: "ui-icon-locked"
+				},
+				text: true
+			});
+			$(".button").click(function(event) {
+				event.preventDefault();
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<center>
+		<p><input type="checkbox" id="light" style="display:none"></p>
+		<p>
+			<h1 id="header">AlphaBot on node.js V0</h1>
+		</p>
+		<p>
+
+		</p>
+		<table>
+			<tr>
+				<td>
+					<iframe src="http://192.168.2.107:3080" width="450" height="320"> </iframe>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td><input type="button" id="camera_up" value="up" style="height:159px;width:150px" class="button"></td>
+						</tr>
+						<tr>
+							<td><input type="button" id="camera_down" value="down" style="height:159px;width:150px" class="button"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+		<table border="0">
+			<tr>
+				<td></td>
+				<td><input type="button" id="move_forward" value="forward" style="height:100px;width:150px" class="button"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" id="move_left" value="left" style="height:100px;width:150px" class="button">
+				</td>
+				<td>
+					<input type="button" id="move_stop" value="stop" style="height:100px;width:150px" class="button">
+				</td>
+				<td>
+					<input type="button" id="move_right" value="right" style="height:100px;width:150px" class="button">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<input type="button" id="move_backward" value="backward" style="height:100px;width:150px" class="button">
+				</td>
+				<td></td>
+			</tr>
+		</table>
+		</p>
+		<p>
+			<h1 style="color: red; font-size: 190%; border: 3px solid red" id="obstacle_alert">OBSTACLE <br> DETECTED</h1>
+		</p>
+
+	</center>
+</body>
+
+</html>
