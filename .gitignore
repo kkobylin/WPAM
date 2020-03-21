@@ -10,4 +10,5 @@ temp_server
 .idea
 mobile_app/.idea
 
+robot-server/node_modules
 
