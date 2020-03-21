@@ -8,7 +8,6 @@
 #Ignore everything from mobile_app, temp_server
 temp_server
 .idea
-
-#Except for
+mobile_app/.idea
 
 
