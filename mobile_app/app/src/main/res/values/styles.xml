@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Tutorial style-->
+    <style
+        name="clockFaceNum">
+        <item
+            name="android:layout_width">38dp</item>
+        <item
+            name="android:layout_height">38dp</item>
+        <item
+            name="android:onClick">numClicked</item>
+        <item
+            name="android:textSize">9sp</item>
+    </style>
+
+</resources>

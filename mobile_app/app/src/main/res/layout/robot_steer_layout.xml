@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/dpadOuter"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/dpad_outer"
+        android:clickable="false"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.965" />
+
+    <Button
+        android:id="@+id/dpadInner"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/dpad_inner"
+        android:clickable="false"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="@+id/dpadOuter"
+        app:layout_constraintEnd_toEndOf="@+id/dpadOuter"
+        app:layout_constraintStart_toStartOf="@+id/dpadOuter"
+        app:layout_constraintTop_toTopOf="@+id/dpadOuter"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <Button
+        android:id="@+id/upButton"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:background="@drawable/chevron_up"
+        app:layout_constraintBottom_toBottomOf="@+id/dpadOuter"
+        app:layout_constraintEnd_toEndOf="@+id/dpadOuter"
+        app:layout_constraintStart_toStartOf="@+id/dpadOuter"
+        app:layout_constraintTop_toTopOf="@+id/dpadOuter"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/downButton"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:background="@drawable/chevron_down"
+        app:layout_constraintBottom_toBottomOf="@+id/dpadOuter"
+        app:layout_constraintEnd_toEndOf="@+id/dpadOuter"
+        app:layout_constraintStart_toStartOf="@+id/dpadOuter"
+        app:layout_constraintTop_toTopOf="@+id/dpadOuter"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/leftButton"
+        android:layout_width="55dp"
+        android:layout_height="100dp"
+        android:background="@drawable/chevron_left"
+        app:layout_constraintBottom_toBottomOf="@+id/dpadOuter"
+        app:layout_constraintEnd_toStartOf="@+id/dpadInner"
+        app:layout_constraintHorizontal_bias="0.337"
+        app:layout_constraintStart_toStartOf="@+id/dpadOuter"
+        app:layout_constraintTop_toTopOf="@+id/dpadOuter" />
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="55dp"
+        android:layout_height="100dp"
+        android:background="@drawable/chevron_right"
+        app:layout_constraintBottom_toBottomOf="@+id/dpadOuter"
+        app:layout_constraintEnd_toEndOf="@+id/dpadOuter"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/dpadInner"
+        app:layout_constraintTop_toTopOf="@+id/dpadOuter" />
+
+    <TextView
+        android:id="@+id/warnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here should be text"
+        android:textColor="#F40707"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <Button
+        android:id="@+id/cameraBackground"
+        android:layout_width="88dp"
+        android:layout_height="176dp"
+        android:background="#8fa3ac"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.185" />
+
+    <Button
+        android:id="@+id/cameraUp"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:background="@drawable/arrow_up_bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraBackground"
+        app:layout_constraintEnd_toEndOf="@+id/cameraBackground"
+        app:layout_constraintStart_toStartOf="@+id/cameraBackground"
+        app:layout_constraintTop_toTopOf="@+id/cameraBackground"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/cameraDown"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:background="@drawable/arrow_up_bold"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraBackground"
+        app:layout_constraintEnd_toEndOf="@+id/cameraBackground"
+        app:layout_constraintStart_toStartOf="@+id/cameraBackground"
+        app:layout_constraintTop_toBottomOf="@+id/cameraUp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

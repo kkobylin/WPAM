@@ -1,1 +1,14 @@
+*.iml
+.gradle
+.externalNativeBuild
+.cxx
+.DS_Store
+.properties
+
+#Ignore everything from mobile_app, temp_server
+temp_server
+.idea
+mobile_app/.idea
+
 robot-server/node_modules
+
