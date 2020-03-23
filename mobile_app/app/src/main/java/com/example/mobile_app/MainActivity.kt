@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.robot_steer_layout)
-        val ipAddress = "192.168.88.52"
+        val ipAddress = "192.168.2.109"
 
         warnText.visibility = View.INVISIBLE
 
         //Variable must be initialized
-        var socket : Socket = IO.socket("http://localhost:3080")
+        var socket : Socket = IO.socket("http://localhost:3000")
         try {
-            socket = IO.socket("http://$ipAddress:3080")
+            socket = IO.socket("http://$ipAddress:3000")
             socket.connect()
         }
         catch (e : URISyntaxException) {
