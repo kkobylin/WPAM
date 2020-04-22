@@ -1,13 +1,14 @@
 package com.example.mobile_app
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mobile_app.R.drawable.button_background
 import com.github.nkzawa.emitter.Emitter
 import com.github.nkzawa.socketio.client.IO
 import com.github.nkzawa.socketio.client.Socket
@@ -36,6 +37,8 @@ class RobotSteerActivity : AppCompatActivity() {
         warnText.visibility = View.INVISIBLE
 
         webView.loadUrl("http://$ipAddress:3080")
+        webView.setPadding(0, 0, 0, 0)
+        webView.setInitialScale(getScale())
 
         //Variable must be initialized
         var socket : Socket = IO.socket("http://localhost:3000")
@@ -134,12 +137,22 @@ class RobotSteerActivity : AppCompatActivity() {
         })
     }
 
-    fun hideSystemUI() {
+    private fun hideSystemUI() {
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN
                 or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+    }
+
+    private fun getScale(): Int {
+        val display =
+            (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
+        val width = display.width
+//        var value: Double = width / 128.0
+        var value: Double = width / 640.0
+        value *= 60
+        return value.toInt()
     }
 }
