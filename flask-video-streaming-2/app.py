@@ -5,7 +5,7 @@ import argparse
 
 # import camera driver
 # camera_type='emu'
-camera_type='emu'
+camera_type='cv2'
 Camera = import_module('camera_' + camera_type).Camera
 #Camera = import_module('camera_cv2').Camera
 
