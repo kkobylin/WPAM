@@ -56,7 +56,7 @@
         android:ems="10"
         android:hint="192.168.X.X"
         android:inputType="textPersonName"
-        android:text="192.168.88.52"
+        android:text="192.168.2.112"
         android:textColor="@color/colorPrimaryText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -20,6 +20,10 @@ var enb = new Gpio(26, {
     mode: Gpio.OUTPUT
 });
 
+// setting the PWM frequency
+ena.pwmFrequency(500)
+enb.pwmFrequency(500)
+
 // correction used by encoders to keep wheels rotating at same speed
 var correction = 0;
 var current_speed = 0;
@@ -40,20 +44,21 @@ module.exports.updateCorrection = (value) => {
 module.exports.backward = (speed) => {
     current_speed = speed;
     updateSpeed()
-    in1.digitalWrite(1);
-    in2.digitalWrite(0);
-    in3.digitalWrite(0);
-    in4.digitalWrite(1);
+    in1.digitalWrite(0);
+    in2.digitalWrite(1);
+    in3.digitalWrite(1);
+    in4.digitalWrite(0);
     // console.log('Moving backward');
 }
 
 module.exports.forward = (speed) => {
     current_speed = speed;
     updateSpeed()
-    in1.digitalWrite(0);
-    in2.digitalWrite(1);
-    in3.digitalWrite(1);
-    in4.digitalWrite(0);
+    in1.digitalWrite(1);
+    in2.digitalWrite(0);
+    in3.digitalWrite(0);
+    in4.digitalWrite(1);
+
     // console.log('Moving forward');
 }
 
@@ -65,6 +70,7 @@ module.exports.left = (speed) => {
     in2.digitalWrite(1);
     in3.digitalWrite(0);
     in4.digitalWrite(1);
+
     // console.log('Moving left');
 }
 
@@ -75,6 +81,7 @@ module.exports.right = (speed) => {
     in2.digitalWrite(0);
     in3.digitalWrite(1);
     in4.digitalWrite(0);
+
     // console.log('Moving right');
 }
 

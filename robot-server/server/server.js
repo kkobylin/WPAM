@@ -36,16 +36,16 @@ io.on('connection', (socket) => {
                 motors.stop();
                 break;
             case "forward":
-                motors.forward(110);
+                motors.forward(70);
                 break;
             case "backward":
-                motors.backward(110);
+                motors.backward(70);
                 break;
             case "left":
-                motors.left(110);
+                motors.left(70);
                 break;
             case "right":
-                motors.right(110);
+                motors.right(70);
                 break;
             default:
                 console.log('Error: Unknown command!');
