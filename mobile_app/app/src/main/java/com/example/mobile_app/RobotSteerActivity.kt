@@ -30,11 +30,12 @@ class RobotSteerActivity : AppCompatActivity() {
             if (intent.hasExtra("ip"))
                 intent.extras?.getString("ip").toString()
             else
-                "No extra"
+                "No IP"
         } else
-            "No extra"
+            "No IP"
 
         warnText.visibility = View.INVISIBLE
+        redLine.visibility = View.INVISIBLE
 
         webView.loadUrl("http://$ipAddress:3080")
         webView.setPadding(0, 0, 0, 0)
@@ -56,51 +57,75 @@ class RobotSteerActivity : AppCompatActivity() {
 
         downButton.setOnTouchListener { v, event ->
             if(moveBackwardEnable) {
-                if (event.action == MotionEvent.ACTION_DOWN)
+                if (event.action == MotionEvent.ACTION_DOWN) {
                     socket.emit("move", "backward")
-                else if (event.action == MotionEvent.ACTION_UP)
+                    dpadOuter.setBackgroundResource(R.drawable.dpad_outer_down_pressed)
+                }
+                else if (event.action == MotionEvent.ACTION_UP) {
                     socket.emit("move", "stop")
+                    dpadOuter.setBackgroundResource(R.drawable.dpad_outer)
+                }
             }
             true
         }
 
         upButton.setOnTouchListener { v, event ->
-            if(event.action == MotionEvent.ACTION_DOWN)
+            if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("move", "forward")
-            else if(event.action == MotionEvent.ACTION_UP)
+                dpadOuter.setBackgroundResource(R.drawable.dpad_outer_up_pressed)
+            }
+            else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("move", "stop")
+                dpadOuter.setBackgroundResource(R.drawable.dpad_outer)
+            }
             true
         }
 
         leftButton.setOnTouchListener { v, event ->
-            if(event.action == MotionEvent.ACTION_DOWN)
+            if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("move", "left")
-            else if(event.action == MotionEvent.ACTION_UP)
+                dpadOuter.setBackgroundResource(R.drawable.dpad_outer_left_pressed)
+            }
+            else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("move", "stop")
+                dpadOuter.setBackgroundResource(R.drawable.dpad_outer)
+            }
             true
         }
 
         rightButton.setOnTouchListener { v, event ->
-            if(event.action == MotionEvent.ACTION_DOWN)
+            if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("move", "right")
-            else if(event.action == MotionEvent.ACTION_UP)
+                dpadOuter.setBackgroundResource(R.drawable.dpad_outer_right_pressed)
+            }
+            else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("move", "stop")
+                dpadOuter.setBackgroundResource(R.drawable.dpad_outer)
+            }
             true
         }
 
         cameraUp.setOnTouchListener { v, event ->
-            if(event.action == MotionEvent.ACTION_DOWN)
+            if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("camera", "up")
-            else if(event.action == MotionEvent.ACTION_UP)
+                cameraUp.setBackgroundResource(R.drawable.camera_background_pressed)
+            }
+            else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("camera", "stop")
+                cameraUp.setBackgroundResource(R.drawable.camera_background_released)
+            }
             true
         }
 
         cameraDown.setOnTouchListener { v, event ->
-            if(event.action == MotionEvent.ACTION_DOWN)
+            if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("camera", "down")
-            else if(event.action == MotionEvent.ACTION_UP)
+                cameraDown.setBackgroundResource(R.drawable.camera_background_pressed)
+            }
+            else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("camera", "stop")
+                cameraDown.setBackgroundResource(R.drawable.camera_background_released)
+            }
             true
         }
 
@@ -114,9 +139,9 @@ class RobotSteerActivity : AppCompatActivity() {
 
         socket.on("obstacle", onObstacle)
 
-        //todo send back settings
         backButton.setOnClickListener { _ ->
             val mainIntent = Intent(applicationContext, MainActivity::class.java )
+            mainIntent.putExtra("ip", ipAddress)
             startActivity(mainIntent)
         }
 
@@ -126,12 +151,13 @@ class RobotSteerActivity : AppCompatActivity() {
         runOnUiThread(Runnable {
             val value = args[0] as Boolean
             if(value){
-                warnText.text = "Obstacle alert"
-                warnText.visibility = View.VISIBLE
+                redLine.visibility = View.VISIBLE
+                downButton.setBackgroundResource(R.drawable.red_chevron_down)
                 moveBackwardEnable = false
             }
             else {
-                warnText.visibility = View.INVISIBLE
+                redLine.visibility = View.INVISIBLE
+                downButton.setBackgroundResource(R.drawable.chevron_down)
                 moveBackwardEnable = true
             }
         })

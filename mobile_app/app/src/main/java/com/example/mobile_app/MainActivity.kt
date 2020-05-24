@@ -12,6 +12,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.welcome_screen)
 
+        val ipAddress : String
+        if(intent != null) {
+            if (intent.hasExtra("ip")) {
+                ipAddress = intent.extras?.getString("ip").toString()
+                ipEditText.setText(ipAddress)
+            }
+        }
+
         val ipAddressPattern =
             ("^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
                     "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
