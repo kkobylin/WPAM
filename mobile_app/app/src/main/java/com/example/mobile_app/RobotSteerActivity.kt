@@ -148,6 +148,16 @@ class RobotSteerActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        hideSystemUI()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        hideSystemUI()
+    }
+
     private var onObstacle: Emitter.Listener = Emitter.Listener { args ->
         runOnUiThread(Runnable {
             val value = args[0] as Boolean
