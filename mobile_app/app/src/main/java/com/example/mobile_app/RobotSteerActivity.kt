@@ -40,6 +40,7 @@ class RobotSteerActivity : AppCompatActivity() {
         webView.loadUrl("http://$ipAddress:3080")
         webView.setPadding(0, 0, 0, 0)
         webView.setInitialScale(getScale())
+        webView.settings.builtInZoomControls = true;
 
         //Variable must be initialized
         var socket : Socket = IO.socket("http://localhost:3000")
