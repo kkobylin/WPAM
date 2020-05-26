@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.welcome_screen.*
 
 class MainActivity : AppCompatActivity() {
 
-    var rafalView = false
+    var rafalView = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
