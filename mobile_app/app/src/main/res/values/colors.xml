@@ -6,4 +6,11 @@
     <color name="colorPrimaryText">#3083A5</color>
     <color name="colorPrimaryBackgroundPressed">#80546F7A</color>
     <color name="colorSecondaryBackgroundPressed">#808FA3AC</color>
+
+
+    <color name="colorPrimaryBackgroundRafal">#024249</color>
+    <color name="colorSecondaryBackgroundRafal">#16817a</color>
+    <color name="colorPrimaryTextRafal">#3083A5</color>
+    <color name="colorPrimaryBackgroundPressedRafal">#fa744f</color>
+    <color name="colorSecondaryBackgroundPressedRafal">#f79071</color>
 </resources>

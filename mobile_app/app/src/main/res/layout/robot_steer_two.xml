@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="447dp"
+        android:layout_height="276dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.495">
+
+    </WebView>
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="109dp"
+        android:layout_height="41dp"
+        android:background="@drawable/rafal_button_background"
+        android:text="Back"
+        android:textColor="@color/colorSecondaryBackgroundPressedRafal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <Button
+        android:id="@+id/dpadOuter"
+        android:layout_width="129dp"
+        android:layout_height="129dp"
+        android:background="@drawable/rafal_dpad_outer"
+        android:clickable="false"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.986"
+        app:layout_constraintStart_toEndOf="@+id/cameraUp"
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+    <Button
+        android:id="@+id/dpadInner"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/rafal_dpad_inner"
+        android:clickable="false"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="@+id/dpadOuter"
+        app:layout_constraintEnd_toEndOf="@+id/dpadOuter"
+        app:layout_constraintStart_toStartOf="@+id/dpadOuter"
+        app:layout_constraintTop_toTopOf="@+id/dpadOuter"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <Button
+        android:id="@+id/upButton"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:background="@drawable/rafal_chevron_up"
+        app:layout_constraintBottom_toTopOf="@+id/dpadInner"
+        app:layout_constraintEnd_toEndOf="@+id/dpadOuter"
+        app:layout_constraintStart_toStartOf="@+id/dpadOuter"
+        app:layout_constraintTop_toTopOf="@+id/dpadOuter" />
+
+    <Button
+        android:id="@+id/downButton"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:background="@drawable/rafal_chevron_down"
+        app:layout_constraintBottom_toBottomOf="@+id/dpadOuter"
+        app:layout_constraintEnd_toEndOf="@+id/dpadOuter"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="@+id/dpadOuter"
+        app:layout_constraintTop_toBottomOf="@+id/dpadInner"
+        app:layout_constraintVertical_bias="0.368" />
+
+    <Button
+        android:id="@+id/leftButton"
+        android:layout_width="55dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rafal_chevron_left"
+        app:layout_constraintBottom_toBottomOf="@+id/dpadOuter"
+        app:layout_constraintEnd_toStartOf="@+id/dpadInner"
+        app:layout_constraintHorizontal_bias="0.337"
+        app:layout_constraintStart_toStartOf="@+id/dpadOuter"
+        app:layout_constraintTop_toTopOf="@+id/dpadOuter" />
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="55dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rafal_chevron_right"
+        app:layout_constraintBottom_toBottomOf="@+id/dpadOuter"
+        app:layout_constraintEnd_toEndOf="@+id/dpadOuter"
+        app:layout_constraintStart_toEndOf="@+id/dpadInner"
+        app:layout_constraintTop_toTopOf="@+id/dpadOuter" />
+
+    <ImageButton
+        android:id="@+id/cameraDown"
+        android:layout_width="38dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/rafal_but_arrow_background"
+        android:rotation="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/webView"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraUp"
+        app:layout_constraintVertical_bias="0.013"
+        app:srcCompat="@drawable/rafal_arrow_down_thick" />
+
+    <ImageButton
+        android:id="@+id/cameraUp"
+        android:layout_width="38dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/rafal_but_arrow_background"
+        android:rotation="180"
+        android:src="@drawable/rafal_arrow_down_thick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cameraDown"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cameraDown"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367" />
+
+    <TextView
+        android:id="@+id/warnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/webView"
+        app:layout_constraintTop_toTopOf="@+id/webView" />
+
+    <Button
+        android:id="@+id/redLine"
+        android:layout_width="652dp"
+        android:layout_height="28dp"
+        android:background="@drawable/red_rectangle"
+        android:shadowColor="#F40202"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@ class RobotSteerActivity : AppCompatActivity() {
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.robot_steer_one)
+        setContentView(R.layout.robot_steer_two)
 
         /* 192.168.88.52 */
         val ipAddress: String = if(intent != null) {
@@ -60,11 +60,11 @@ class RobotSteerActivity : AppCompatActivity() {
             if(moveBackwardEnable) {
                 if (event.action == MotionEvent.ACTION_DOWN) {
                     socket.emit("move", "backward")
-                    dpadOuter.setBackgroundResource(R.drawable.dpad_outer_down_pressed)
+                    dpadOuter.setBackgroundResource(R.drawable.rafal_dpad_outer_down_pressed)
                 }
                 else if (event.action == MotionEvent.ACTION_UP) {
                     socket.emit("move", "stop")
-                    dpadOuter.setBackgroundResource(R.drawable.dpad_outer)
+                    dpadOuter.setBackgroundResource(R.drawable.rafal_dpad_outer)
                 }
             }
             true
@@ -73,11 +73,11 @@ class RobotSteerActivity : AppCompatActivity() {
         upButton.setOnTouchListener { v, event ->
             if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("move", "forward")
-                dpadOuter.setBackgroundResource(R.drawable.dpad_outer_up_pressed)
+                dpadOuter.setBackgroundResource(R.drawable.rafal_dpad_outer_up_pressed)
             }
             else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("move", "stop")
-                dpadOuter.setBackgroundResource(R.drawable.dpad_outer)
+                dpadOuter.setBackgroundResource(R.drawable.rafal_dpad_outer)
             }
             true
         }
@@ -85,11 +85,11 @@ class RobotSteerActivity : AppCompatActivity() {
         leftButton.setOnTouchListener { v, event ->
             if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("move", "left")
-                dpadOuter.setBackgroundResource(R.drawable.dpad_outer_left_pressed)
+                dpadOuter.setBackgroundResource(R.drawable.rafal_dpad_outer_left_pressed)
             }
             else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("move", "stop")
-                dpadOuter.setBackgroundResource(R.drawable.dpad_outer)
+                dpadOuter.setBackgroundResource(R.drawable.rafal_dpad_outer)
             }
             true
         }
@@ -97,11 +97,11 @@ class RobotSteerActivity : AppCompatActivity() {
         rightButton.setOnTouchListener { v, event ->
             if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("move", "right")
-                dpadOuter.setBackgroundResource(R.drawable.dpad_outer_right_pressed)
+                dpadOuter.setBackgroundResource(R.drawable.rafal_dpad_outer_right_pressed)
             }
             else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("move", "stop")
-                dpadOuter.setBackgroundResource(R.drawable.dpad_outer)
+                dpadOuter.setBackgroundResource(R.drawable.rafal_dpad_outer)
             }
             true
         }
@@ -109,11 +109,11 @@ class RobotSteerActivity : AppCompatActivity() {
         cameraUp.setOnTouchListener { v, event ->
             if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("camera", "up")
-                cameraUp.setBackgroundResource(R.drawable.camera_background_pressed)
+                cameraUp.setBackgroundResource(R.drawable.rafal_camera_background_pressed)
             }
             else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("camera", "stop")
-                cameraUp.setBackgroundResource(R.drawable.camera_background_released)
+                cameraUp.setBackgroundResource(R.drawable.rafal_camera_background_released)
             }
             true
         }
@@ -121,11 +121,11 @@ class RobotSteerActivity : AppCompatActivity() {
         cameraDown.setOnTouchListener { v, event ->
             if(event.action == MotionEvent.ACTION_DOWN) {
                 socket.emit("camera", "down")
-                cameraDown.setBackgroundResource(R.drawable.camera_background_pressed)
+                cameraDown.setBackgroundResource(R.drawable.rafal_camera_background_pressed)
             }
             else if(event.action == MotionEvent.ACTION_UP) {
                 socket.emit("camera", "stop")
-                cameraDown.setBackgroundResource(R.drawable.camera_background_released)
+                cameraDown.setBackgroundResource(R.drawable.rafal_camera_background_released)
             }
             true
         }
@@ -168,7 +168,7 @@ class RobotSteerActivity : AppCompatActivity() {
             }
             else {
                 redLine.visibility = View.INVISIBLE
-                downButton.setBackgroundResource(R.drawable.chevron_down)
+                downButton.setBackgroundResource(R.drawable.rafal_chevron_down)
                 moveBackwardEnable = true
             }
         })

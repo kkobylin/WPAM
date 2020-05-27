@@ -8,6 +8,8 @@ import kotlinx.android.synthetic.main.welcome_screen.*
 
 class MainActivity : AppCompatActivity() {
 
+    var rafalView = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.welcome_screen)
@@ -30,10 +32,18 @@ class MainActivity : AppCompatActivity() {
             val ip : String = ipEditText.text.toString()
             if(ip.isNotEmpty()){
                 if (ipAddressPattern.matches(ip)) {
-                    val robotSteerIntent =
-                        Intent(applicationContext, RobotSteerActivity::class.java)
-                    robotSteerIntent.putExtra("ip", ip)
-                    startActivity(robotSteerIntent)
+                    if (rafalView) {
+                        val robotSteerIntent =
+                            Intent(applicationContext, RobotSteerActivityRafal::class.java)
+                        robotSteerIntent.putExtra("ip", ip)
+                        startActivity(robotSteerIntent)
+                    }else{
+                        val robotSteerIntent =
+                            Intent(applicationContext, RobotSteerActivity::class.java)
+                        robotSteerIntent.putExtra("ip", ip)
+                        startActivity(robotSteerIntent)
+                    }
+
                 }
                 else{
                     ipEditText.text.clear()
