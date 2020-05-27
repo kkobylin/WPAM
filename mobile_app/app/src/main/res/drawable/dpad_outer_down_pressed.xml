@@ -8,5 +8,8 @@
     android:centerColor="@color/colorPrimaryBackground"
     android:startColor="@color/colorPrimaryBackground"
     android:type="linear"/>
+    <stroke
+        android:width="2dp"
+        android:color="@color/colorPrimaryBackground"/>
 
 </shape>

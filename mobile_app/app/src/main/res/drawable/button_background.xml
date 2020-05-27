@@ -22,12 +22,12 @@
             <gradient
                 android:angle="270"
                 android:endColor="@color/colorSecondaryBackgroundPressed"
-                android:startColor="@color/colorPrimaryBackgroundPressed"/>
+                android:startColor="@color/colorSecondaryBackgroundPressed"/>
             <stroke
-                android:width="4dp"
-                android:color="@color/colorSecondaryBackground"/>
+                android:width="2dp"
+                android:color="@color/colorSecondaryBackgroundPressed"/>
             <corners
-                android:radius="7dp"/>
+                android:radius="6dp"/>
             <padding
                 android:bottom="10dp"
                 android:left="10dp"
