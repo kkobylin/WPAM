@@ -20,7 +20,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.358" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/layoutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose layout"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ipEditText"
+        app:layout_constraintVertical_bias="0.089" />
 
     <TextView
         android:id="@+id/title"
@@ -75,5 +89,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
+    <RadioGroup
+        android:id="@+id/toggleGroup"
+        android:layout_width="194dp"
+        android:layout_height="59dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/layoutText"
+        app:layout_constraintVertical_bias="0.067">
+
+        <ToggleButton
+            android:id="@+id/grey_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryText"
+            android:checked="true"
+            android:onClick="onToggle"
+            android:textColor="@color/white"
+            android:textOff="Grey"
+            android:textOn="Grey"
+            android:textSize="14sp" />
+
+        <ToggleButton
+            android:id="@+id/green_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorSecondaryBackground"
+            android:onClick="onToggle"
+            android:textColor="@color/colorPrimaryBackgroundPressed"
+            android:textOff="Green"
+            android:textOn="Green"
+            android:textSize="14sp" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
